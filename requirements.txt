@@ -1,0 +1,5 @@
+git+https://github.com/Shizmob/pydle.git
+git+https://github.com/martyzz1/heroku3.py.git
+beautifulsoup4
+requests
+heroku3
