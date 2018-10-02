@@ -1,5 +1,5 @@
 # oft-irc-bot
-osu! F2 Tourney IRC random map bot
+osu! F2 Tournament IRC random map bot
 
 Designed for heroku.
 
