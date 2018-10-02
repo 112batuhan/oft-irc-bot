@@ -16,6 +16,7 @@ class randomPicker:
         if setting == "gs" or setting == "group stage":
 
             self.nm_rate = (5.00,5.30)
+            self.hr_rate = (4.7, 5.00)
             self.dt_rate = (3.50,3.80)
             self.tb_rate = (5.10,5.40)
             self.dt_ar = (0.00,8.00)
@@ -25,6 +26,7 @@ class randomPicker:
         elif setting == "ro16" or setting == "round of 16":
 
             self.nm_rate = (5.30,5.50)
+            self.hr_rate = (5.00, 5.15)
             self.dt_rate = (3.80,3.90)
             self.tb_rate = (5.40,5.60)
             self.dt_ar = (0.00,8.00)
@@ -34,6 +36,7 @@ class randomPicker:
         elif setting == "qf" or setting == "quarterfinals":
 
             self.nm_rate = (5.50,5.80)
+            self.hr_rate = (5.15, 5.40)
             self.dt_rate = (3.90,4.10)
             self.tb_rate = (5.60,5.90)
             self.dt_ar = (0.00,8.50)
@@ -43,6 +46,7 @@ class randomPicker:
         elif setting == "sf" or setting == "semifinals":
 
             self.nm_rate = (5.80,6.00)
+            self.hr_rate = (5.40, 5.60)
             self.dt_rate = (4.10,4.20)
             self.tb_rate = (5.90,6.10)
             self.dt_ar = (0.00,8.50)
@@ -52,6 +56,7 @@ class randomPicker:
         elif setting == "finals" or setting == "finals":
 
             self.nm_rate = (6.00,6.30)
+            self.hr_rate = (5.60, 5.90)
             self.dt_rate = (4.20,4.30)
             self.tb_rate = (6.10,6.40)
             self.dt_ar = (0.00,9.00)
@@ -61,6 +66,7 @@ class randomPicker:
         elif setting == "gf" or setting == "grand finals":
             
             self.nm_rate = (6.10,6.50)
+            self.hr_rate = (5.75, 6)
             self.dt_rate = (4.20,4.50)
             self.tb_rate = (6.10,6.60)
             self.dt_ar = (0.00,9.00)
@@ -79,6 +85,13 @@ class randomPicker:
             final_max_length = self.max_length
             final_min_length = self.min_length
             final_star_rate = self.nm_rate
+            final_approach_rate = self.ar
+
+        elif command == "hr":
+
+            final_max_length = self.tb_max_length
+            final_min_length = self.tb_min_length
+            final_star_rate = self.hr_rate
             final_approach_rate = self.ar
 
         elif command == "dt":

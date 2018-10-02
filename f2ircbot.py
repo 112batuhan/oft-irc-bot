@@ -24,7 +24,7 @@ class MyOwnBot(pydle.Client):
         logger.info("Succesfully connected.")
 
         self.active_channel_list = []
-
+        
         dyno_timer.start()
 
     async def on_private_message(self,target, nick,message):
@@ -48,19 +48,16 @@ class MyOwnBot(pydle.Client):
 
         logger.info(f"{target} - {source}:{message}")
 
+        index = index_finder(self.active_channel_list, target)
+
         try:
             if message.startswith('!f2') and source in refList.List:  
-
                 dyno_timer.retsart()
-
-                index = index_finder(self.active_channel_list, target)
                 
                 if message.startswith("!f2 set"):
-                    
                     stage = message.split("!f2 set ")[1]
                     
                     if index != None:
-
                         del self.active_channel_list[index]
 
                     try:
@@ -86,13 +83,6 @@ class MyOwnBot(pydle.Client):
                     except:
                         logger.exception("Error while removing a channel from list!")
 
-
-                elif index != None and message.startswith("!mp close"):
-
-                    del self.active_channel_list[index]
-                    logger.info(f"{target} settings removed")
-
-
                 else:
 
                     if index == None:
@@ -101,13 +91,18 @@ class MyOwnBot(pydle.Client):
                     else:
                         
                         try:
-
                             mod = message.split("!f2 ")[-1]
                             map_id = self.active_channel_list[index][1].randomMapId(mod)
                             await self.message(target, f"!mp map {map_id}")
                         
                         except ValueError:
                             await self.message(target, "invalid mod command!")
+            
+            
+            elif index != None and message.startswith("!mp close"):
+
+                del self.active_channel_list[index]
+                logger.info(f"{target} settings removed")
 
 
 
