@@ -1,7 +1,7 @@
 # oft-irc-bot
 osu! F2 Tourney IRC random map bot
 
-Designed for heroku,
+Designed for heroku.
 
 To use it locally, please put your osu api key, username and irc password.
 
