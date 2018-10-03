@@ -80,7 +80,7 @@ class randomPicker:
 
     def randomMapId(self,command):
     
-        if command == "!f2":
+        if command == "!f2" or command == "nm":
             
             final_max_length = self.max_length
             final_min_length = self.min_length

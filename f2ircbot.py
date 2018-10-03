@@ -50,6 +50,8 @@ class MyOwnBot(pydle.Client):
 
         index = index_finder(self.active_channel_list, target)
 
+        message = message.lower()
+        
         try:
             if message.startswith('!f2') and source in refList.List:  
                 dyno_timer.retsart()
